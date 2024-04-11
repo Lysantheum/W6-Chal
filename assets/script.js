@@ -18,13 +18,13 @@ searchForm.addEventListener('submit', (e) => {
 async function getWeather(city) {
     
     try {
-        const response = await fetch('https://api.openweathermap.org/data/3.0/onecall?lat={33.44}&lon={-112.07}&exclude={}&appid={891d7b1e8203a6c47aa00ddbfb5c18b1}');
+        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?lat={33.4484}&lon={-112.074}&appid={891d7b1e8203a6c47aa00ddbfb5c18b1}');
         //console.log(response);
         const data = await response.json();
         displayCurrentWeather(data);
         searchHistory.push(city);
         displaySearchHistory();
-    }   catch (error) {
+    }  catch (error) {
         console.error('Error fetching weather data', error);
     }
 }
